@@ -37,7 +37,8 @@ namespace WindowsFormsApp1
       // Draw line to screen.
       using (var graphics = Graphics.FromImage(MyImage))
       {
-        for (int i = 0; i < 20; i++)
+        int col = trackBar1.Value;
+        for (int i = 0; i < col; i++)
         {
           int x2 = rnd.Next(0, 500);
           int y2 = rnd.Next(0, 500);
@@ -58,11 +59,15 @@ namespace WindowsFormsApp1
       MyImage = new Bitmap(fileToDisplay);
 
       // Create pen.
-      Pen blackPen = new Pen(Color.MediumVioletRed, 5);
+      Pen blackPen = new Pen(Color.Blue, 2);
       MyImage = DrawLuch(MyImage, blackPen);
 
       pictureBox1.ClientSize = new Size(500, 500);
       pictureBox1.Image = (Image)MyImage;
+      int col = trackBar1.Value;
+      label1.Text = col.ToString();
+
+
     }
   }
 }
